@@ -87,3 +87,10 @@
            (make-gig godel "Incompleteness theorems" "Logic" start-time end-time)
            (make-gig tarski "Truth in formalized languages" "Logic" start-time end-time)
            (make-gig gentzen "Natural deduction" "Logic" start-time end-time)])
+
+(def news [{:title "Simply typed lambda calculus is strongly normalizing"
+            :published (t/date-time 1967 1 1 0 0 0 0)
+            :content "Tait showed in 1967 that beta-reduction is strongly normalizing. As a corollary beta eta-equivalence is decidable. Statman showed in 1977 that the normalisation problem is not elementary recursive. A purely semantic normalisation proof (see normalisation by evaluation) was given by Berger and Schwichtenberg in 1991."}
+           {:title "General solution to the Entscheidungsproblem is impossible"
+            :published (t/date-time 1936 1 1 0 0 0 0)
+            :content "In 1936, Alonzo Church and Alan Turing published independent papers[2] showing that a general solution to the Entscheidungsproblem is impossible, assuming that the intuitive notation of \"effectively calculable\" is captured by the functions computable by a Turing machine (or equivalently, by those expressible in the lambda calculus). This assumption is now known as the Church–Turing thesis."}])

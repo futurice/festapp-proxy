@@ -20,6 +20,10 @@
           :start-time DateTime
           :end-time DateTime})
 
+(def NewsItem {:title String
+               :published DateTime
+               :content String})
+
 ;;; Routes
 
 (defapi app
@@ -39,6 +43,10 @@
        :return [Gig]
        :summary "List of all gigs"
        (ok gigs))
+     (GET* "/news" []
+       :return [NewsItem]
+       :summary "List of all news"
+       (ok news))
      (GET* "/festival" []
        :return       Festival
        :summary      "Festival general configuration"

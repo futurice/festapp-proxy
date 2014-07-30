@@ -17,6 +17,7 @@
 (def Gig {:artist Artist
           :name String
           :stage String
+          :day String
           :start-time DateTime
           :end-time DateTime})
 

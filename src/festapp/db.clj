@@ -4,7 +4,7 @@
 ;;; This default implementation serves static content.
 
 (def festival {:stages ["Logic" "Fathers" "Type Theory"]
-               :days   ["Saturday"]})
+               :days   ["Friday" "Saturday"]})
 
 (def info {})
 
@@ -67,26 +67,27 @@
               tarski
               gentzen])
 
-(defn make-gig [artist name stage start end]
+(defn make-date [day hour]
+  (t/date-time 2014 8 (if (= day "Friday") 1 2)
+               hour 0 0 0))
+
+(defn make-gig [artist name stage day start-hour end-hour]
   {:artist artist
    :name name
    :stage stage
-   :start-time start
-   :end-time end})
+   :day day
+   :start-time (make-date day start-hour)
+   :end-time (make-date day end-hour)})
 
-; All gigs are at the same time.
-(def start-time (t/date-time 2014 8 1 15 0 0 0))
-(def end-time (t/date-time 2014 8 1 16 0 0 0))
-
-(def gigs [(make-gig coquand "Calculus of Constructions" "Type Theory" start-time end-time)
-           (make-gig martin-lof "Intuitionistic Type Theory" "Type Theory" start-time end-time)
-           (make-gig turing "Turing Machine" "Computing" start-time end-time)
-           (make-gig church "Entscheidungsproblem" "Computing" start-time end-time)
-           (make-gig curry "Curry's Paradox" "Computing" start-time end-time)
-           (make-gig howard "Curry-Howard correspondence" "Computing" start-time end-time)
-           (make-gig godel "Incompleteness theorems" "Logic" start-time end-time)
-           (make-gig tarski "Truth in formalized languages" "Logic" start-time end-time)
-           (make-gig gentzen "Natural deduction" "Logic" start-time end-time)])
+(def gigs [(make-gig coquand "Calculus of Constructions" "Type Theory" "Friday" 16 17)
+           (make-gig martin-lof "Intuitionistic Type Theory" "Type Theory" "Friday" 17 18)
+           (make-gig turing "Turing Machine" "Computing" "Friday" 16 17)
+           (make-gig church "Entscheidungsproblem" "Computing" "Friday" 17 18)
+           (make-gig curry "Curry's Paradox" "Computing" "Saturday" 16 17)
+           (make-gig howard "Curry-Howard correspondence" "Computing" "Saturday" 17 18)
+           (make-gig godel "Incompleteness theorems" "Logic" "Friday" 16 17)
+           (make-gig tarski "Truth in formalized languages" "Logic" "Friday" 17 18)
+           (make-gig gentzen "Natural deduction" "Logic" "Friday" 18 19)])
 
 (def news [{:title "Simply typed lambda calculus is strongly normalizing"
             :published (t/date-time 1967 1 1 0 0 0 0)

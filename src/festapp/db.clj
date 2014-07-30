@@ -95,3 +95,10 @@
            {:title "General solution to the Entscheidungsproblem is impossible"
             :published (t/date-time 1936 1 1 0 0 0 0)
             :content "In 1936, Alonzo Church and Alan Turing published independent papers[2] showing that a general solution to the Entscheidungsproblem is impossible, assuming that the intuitive notation of \"effectively calculable\" is captured by the functions computable by a Turing machine (or equivalently, by those expressible in the lambda calculus). This assumption is now known as the Church–Turing thesis."}])
+
+(def info [{:title "Lambda Calculus"
+            :content "Lambda calculus (also written as λ-calculus) is a formal system in mathematical logic and computer science for expressing computation based on function abstraction and application using variable binding and substitution. First formulated by Alonzo Church to formalize the concept of effective computability, lambda calculus found early successes in the area of computability theory, such as a negative answer to Hilbert's Entscheidungsproblem. Lambda calculus is a conceptually simple universal model of computation (Turing showed in 1937[1] that Turing machines equalled the lambda calculus in expressiveness). The name derives from the Greek letter lambda (λ) used to denote binding a variable in a function."}
+           {:title "Festapp"
+            :content "This project aims to provide General Purpose Festival Apps, to be used as a basis for a companion app for any event. A backend providing data for the applications is a part of the project, but static JSON files can also be used as a data source.
+
+Android and iOS apps are based on Ruisrock 2011–2013 event apps by Futurice. Windows Phone version was recreated from scratch at #osrockathon, where also the other projects were developed further."}])

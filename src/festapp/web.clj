@@ -1,5 +1,6 @@
 (ns festapp.web
   (:require [ring.util.http-response :refer :all]
+            [compojure.route :as route]
             [compojure.api.sweet :refer :all]
             [schema.core :as s]
             [festapp.db :refer :all])
@@ -28,6 +29,7 @@
 ;;; Routes
 
 (defapi app
+  (route/resources "/")
   (swagger-ui "/")
   (swagger-docs "/api/api-docs"
    :title      "Festapp Proxy API"

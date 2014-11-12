@@ -16,7 +16,8 @@
              :info String
              (s/optional-key :wikipedia) String})
 
-(def Gig {:artist Artist
+(def Gig {:id String
+          :artist Artist
           :name String
           :stage String
           :day String

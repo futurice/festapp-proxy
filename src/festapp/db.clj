@@ -74,23 +74,24 @@
   (t/date-time 2014 8 (if (= day "Friday") 1 2)
                hour 0 0 0))
 
-(defn make-gig [artist name stage day start-hour end-hour]
-  {:artist artist
+(defn make-gig [id artist name stage day start-hour end-hour]
+  {:id id
+   :artist artist
    :name name
    :stage stage
    :day day
    :start-time (make-date day start-hour)
    :end-time (make-date day end-hour)})
 
-(def gigs [(make-gig coquand "Calculus of Constructions" "Type Theory" "Friday" 16 17)
-           (make-gig martin-lof "Intuitionistic Type Theory" "Type Theory" "Friday" 17 18)
-           (make-gig turing "Turing Machine" "Computing" "Friday" 16 17)
-           (make-gig church "Entscheidungsproblem" "Computing" "Friday" 17 18)
-           (make-gig curry "Curry's Paradox" "Computing" "Saturday" 16 17)
-           (make-gig howard "Curry-Howard correspondence" "Computing" "Saturday" 17 18)
-           (make-gig godel "Incompleteness theorems" "Logic" "Friday" 16 17)
-           (make-gig tarski "Truth in formalized languages" "Logic" "Friday" 17 18)
-           (make-gig gentzen "Natural deduction" "Logic" "Friday" 18 19)])
+(def gigs [(make-gig "gig1" coquand "Calculus of Constructions" "Type Theory" "Friday" 16 17)
+           (make-gig "gig2" martin-lof "Intuitionistic Type Theory" "Type Theory" "Friday" 17 18)
+           (make-gig "gig3" turing "Turing Machine" "Computing" "Friday" 16 17)
+           (make-gig "gig4" church "Entscheidungsproblem" "Computing" "Friday" 17 18)
+           (make-gig "gig5" curry "Curry's Paradox" "Computing" "Saturday" 16 17)
+           (make-gig "gig5" howard "Curry-Howard correspondence" "Computing" "Saturday" 17 18)
+           (make-gig "gig6" godel "Incompleteness theorems" "Logic" "Friday" 16 17)
+           (make-gig "gig7" tarski "Truth in formalized languages" "Logic" "Friday" 17 18)
+           (make-gig "gig8" gentzen "Natural deduction" "Logic" "Friday" 18 19)])
 
 (def news [{:title "Simply typed lambda calculus is strongly normalizing"
             :published (t/date-time 1967 1 1 0 0 0 0)

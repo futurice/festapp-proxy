@@ -11,6 +11,7 @@
                :days [String]})
 
 (def Artist {:id String
+             :image-url String
              :name String
              :info String
              (s/optional-key :wikipedia) String})

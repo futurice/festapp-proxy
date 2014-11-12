@@ -8,50 +8,53 @@
 
 (def info {})
 
-(def coquand {:id "coquand"
-              :name "Thierry Coquand"
-              :info "Thierry Coquand (born 18 April 1961, Jallieu, Isère, France) is a professor in computer science at the University of Gothenburg, Sweden. He is known for his work in constructive mathematics, especially the calculus of constructions."
-              :wikipedia "http://en.wikipedia.org/wiki/Thierry_Coquand"})
+(defmacro def-artist [artist data]
+  `(def ~artist ~(assoc data :image-url (str "/images/" (data :id) ".jpg"))))
 
-(def martin-lof {:id "martin-lof"
-                 :name "Per Martin-Löf"
-                 :info "Per Erik Rutger Martin-Löf (born 1942) is a Swedish logician, philosopher, and mathematical statistician. He is internationally renowned for his work on the foundations of probability, statistics, mathematical logic, and computer science. "
-                 :wikipedia "http://en.wikipedia.org/wiki/Per_Martin-L%C3%B6f"})
+(def-artist coquand {:id "coquand"
+                     :name "Thierry Coquand"
+                     :info "Thierry Coquand (born 18 April 1961, Jallieu, Isère, France) is a professor in computer science at the University of Gothenburg, Sweden. He is known for his work in constructive mathematics, especially the calculus of constructions."
+                     :wikipedia "http://en.wikipedia.org/wiki/Thierry_Coquand"})
 
-(def turing {:id "turing"
-             :name "Alan Turing"
-             :info "Alan Mathison Turing, OBE, FRS (23 June 1912 – 7 June 1954) was a British mathematician, logician, cryptanalyst, philosopher, computer scientist, mathematical biologist, and marathon and ultra distance runner."
-             :wikipedia "http://en.wikipedia.org/wiki/Alan_Turing"})
+(def-artist martin-lof {:id "martin-lof"
+                        :name "Per Martin-Löf"
+                        :info "Per Erik Rutger Martin-Löf (born 1942) is a Swedish logician, philosopher, and mathematical statistician. He is internationally renowned for his work on the foundations of probability, statistics, mathematical logic, and computer science. "
+                        :wikipedia "http://en.wikipedia.org/wiki/Per_Martin-L%C3%B6f"})
 
-(def church {:id "church"
-             :name "Alonzo Church"
-             :info "Alonzo Church (June 14, 1903 – August 11, 1995) was an American mathematician and logician who made major contributions to mathematical logic and the foundations of theoretical computer science."
-             :wikipedia "http://en.wikipedia.org/wiki/Alonzo_Church"})
+(def-artist turing {:id "turing"
+                    :name "Alan Turing"
+                    :info "Alan Mathison Turing, OBE, FRS (23 June 1912 – 7 June 1954) was a British mathematician, logician, cryptanalyst, philosopher, computer scientist, mathematical biologist, and marathon and ultra distance runner."
+                    :wikipedia "http://en.wikipedia.org/wiki/Alan_Turing"})
 
-(def curry {:id "curry"
-            :name "Haskell Curry"
-            :info "Haskell Brooks Curry (/ˈhæskəl ˈkɜri/; September 12, 1900 – September 1, 1982) was an American mathematician and logician."
-            :wikipedia "http://en.wikipedia.org/wiki/Haskell_Curry"})
+(def-artist church {:id "church"
+                           :name "Alonzo Church"
+                           :info "Alonzo Church (June 14, 1903 – August 11, 1995) was an American mathematician and logician who made major contributions to mathematical logic and the foundations of theoretical computer science."
+                           :wikipedia "http://en.wikipedia.org/wiki/Alonzo_Church"})
 
-(def howard {:id "howard"
-             :name "William Alvin Howard"
-             :info "William Alvin Howard (born 1926) is a proof theorist best known for his work demonstrating formal similarity between intuitionistic logic and the simply typed lambda calculus that has come to be known as the Curry–Howard correspondence."
-             :wikipedia "http://en.wikipedia.org/wiki/William_Alvin_Howard"})
+(def-artist curry {:id "curry"
+                          :name "Haskell Curry"
+                          :info "Haskell Brooks Curry (/ˈhæskəl ˈkɜri/; September 12, 1900 – September 1, 1982) was an American mathematician and logician."
+                          :wikipedia "http://en.wikipedia.org/wiki/Haskell_Curry"})
 
-(def godel {:id "godel"
-            :name "Kurt Gödel"
-            :info "Kurt Friedrich Gödel (April 28, 1906 – January 14, 1978) was an Austrian, and later American, logician, mathematician, and philosopher. "
-            :wikipedia "http://en.wikipedia.org/wiki/Kurt_G%C3%B6del"})
+(def-artist howard {:id "howard"
+                    :name "William Alvin Howard"
+                    :info "William Alvin Howard (born 1926) is a proof theorist best known for his work demonstrating formal similarity between intuitionistic logic and the simply typed lambda calculus that has come to be known as the Curry–Howard correspondence."
+                    :wikipedia "http://en.wikipedia.org/wiki/William_Alvin_Howard"})
 
-(def tarski {:id "tarski"
-             :name "Alfred Tarski"
-             :info "Alfred Tarski (January 14, 1901 – October 26, 1983) was a Polish-American logician, mathematician and philosopher."
-             :wikipedia "http://en.wikipedia.org/wiki/Alfred_Tarski"})
+(def-artist godel {:id "godel"
+                          :name "Kurt Gödel"
+                          :info "Kurt Friedrich Gödel (April 28, 1906 – January 14, 1978) was an Austrian, and later American, logician, mathematician, and philosopher. "
+                          :wikipedia "http://en.wikipedia.org/wiki/Kurt_G%C3%B6del"})
 
-(def gentzen {:id "gentzen"
-              :name "Gerhard Gentzen"
-              :info "Gerhard Karl Erich Gentzen (November 24, 1909 – August 4, 1945) was a German mathematician and logician. He made major contributions to the foundations of mathematics, proof theory, especially on natural deduction and sequent calculus."
-              :wikipedia "http://en.wikipedia.org/wiki/Gerhard_Gentzen"})
+(def-artist tarski {:id "tarski"
+                           :name "Alfred Tarski"
+                           :info "Alfred Tarski (January 14, 1901 – October 26, 1983) was a Polish-American logician, mathematician and philosopher."
+                           :wikipedia "http://en.wikipedia.org/wiki/Alfred_Tarski"})
+
+(def-artist gentzen {:id "gentzen"
+                     :name "Gerhard Gentzen"
+                     :info "Gerhard Karl Erich Gentzen (November 24, 1909 – August 4, 1945) was a German mathematician and logician. He made major contributions to the foundations of mathematics, proof theory, especially on natural deduction and sequent calculus."
+                     :wikipedia "http://en.wikipedia.org/wiki/Gerhard_Gentzen"})
 
 ; Ideas for speakers:
 ; http://en.wikipedia.org/wiki/Saunders_Mac_Lane

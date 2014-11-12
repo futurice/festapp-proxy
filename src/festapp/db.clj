@@ -87,6 +87,7 @@
            (make-gig "gig2" martin-lof "Intuitionistic Type Theory" "Type Theory" "Friday" 17 18)
            (make-gig "gig3" turing "Turing Machine" "Computing" "Friday" 16 17)
            (make-gig "gig4" church "Entscheidungsproblem" "Computing" "Friday" 17 18)
+           (make-gig "gig3a" turing "Breaking Enigma" "Computing" "Saturday" 15 16)
            (make-gig "gig5" curry "Curry's Paradox" "Computing" "Saturday" 16 17)
            (make-gig "gig5" howard "Curry-Howard correspondence" "Computing" "Saturday" 17 18)
            (make-gig "gig6" godel "Incompleteness theorems" "Logic" "Friday" 16 17)
